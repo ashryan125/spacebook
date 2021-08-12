@@ -1,0 +1,25 @@
+{
+  "name": "spacebook",
+  "version": "1.0.0",
+  "description": "## Description A social media startup where users can share their thoughts, react to friends' thoughts, and create a friend list",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashryan125/spacebook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashryan125/spacebook/issues"
+  },
+  "homepage": "https://github.com/ashryan125/spacebook#readme"
+}
