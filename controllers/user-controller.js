@@ -12,7 +12,7 @@ const userController = {
 
   // get user by id
   getUserById({ params }, res) {
-    User.findOne({ _id: params.ud })
+    User.findOne({ _id: params.id })
       .then((dbUserData) => {
         // if no user is found, send 404
         if (!dbUserData) {
