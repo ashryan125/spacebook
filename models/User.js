@@ -11,7 +11,7 @@ const UserSchema = new Schema(
       type: String,
       unique: true,
       required: "You must provide a username!",
-      trim: true,
+      trim: true
     },
     email: {
       type: String,
@@ -19,25 +19,27 @@ const UserSchema = new Schema(
       validate: [validateEmail, "Please fill a valid email address"],
       match: [
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-        "Please fill a valid email address",
-      ],
+        "Please fill a valid email address"
+      ]
     },
     thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Thought",
-      },
-    ],
+        ref: "Thought"
+      }
+    ]
   },
   {
     toJSON: {
-      virtuals: true,
+        virtuals: true
     },
-    id: false,
-  }
+    id: false
+}
 );
 
-
+// userSchema.virtual('friendCount').get(function() {
+//   return this.friends.length;
+// });
 
 // create the User model using the UserSchema
 const User = model("User", UserSchema);
