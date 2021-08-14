@@ -51,6 +51,24 @@ const thoughtController = {
       .catch((err) => res.json(err));
   },
 
+  // ADD A REACTION
+  addReaction({ params, body }, res) {
+    console.log(body);
+    Thought.findOneAndUpdate(
+      { _id: params.thoughtId },
+      { $addToSet: { reactions: body } },
+      { new: true, runValidators: true }
+    )
+      .then((dbThoughtData) => {
+        if (!dbThoughtData) {
+          res.status(404).json({ message: "No user found with this id!" });
+          return;
+        }
+        res.json(dbThoughtData);
+      })
+      .catch((err) => res.json(err));
+  },
+
   // UPDATE A THOUGHT
   updateThought({ params, body }, res) {
     Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true })
@@ -64,6 +82,25 @@ const thoughtController = {
       .catch((err) => {
         res.status(400).json(err);
       });
+  },
+
+  // DELETE A REACTION
+  removeReaction({ params }, res) {
+    Thought.findOneAndUpdate(
+      { _id: params.thoughtId },
+      { $pull: { reactions: { reactionId: params.reactionId } } },
+      { new: true, runValidators: true }
+    )
+    .then((dbThoughtData) => {
+      if (!dbThoughtData) {
+        res
+          .status(404)
+          .json({ message: "Reaction deleted! Refresh GET all thoughts" });
+        return;
+      }
+      res.json(dbThoughtData);
+    })
+    .catch((err) => res.json(err));
   },
 
   // DELETE A THOUGHT
