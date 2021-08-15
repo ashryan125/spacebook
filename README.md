@@ -14,6 +14,8 @@ Coming Soon!
 ## Table of Contents
 
 * [Built With](#built-with)
+* [Installation](#installation)
+* [Usage](#usage)
 * [User Story](#user-story)
 * [Acceptance Criteria](#acceptance-criteria)
 * [See It For Yourself](#screenshots)
@@ -27,6 +29,27 @@ Coming Soon!
 * Mongoose
 * Node.js
 
+---
+
+## Installation
+Clone the Github repo.
+```https://github.com/ashryan125/spacebook.git```
+
+### Node.js must be installer prior to installing any other packages. Install below in the order as shown
+
+Once in the properly cloned folder, run ```npm install``` to install the following dependencies:
+ * Express:  ```npm i express``` to use Express.js for your server
+* MongoDB: ``` npm install mongodb``` to use Mongo Database for the database storage
+* Mongoose: ``` npm install mongoose ```
+ * Alernatively, you can run all at once with ```npm install express mongodb mongoose```
+
+ ---
+
+## Usuage
+ #### **LOCAL USAGE:** 
+ Enter ```npm start``` in your command line and press ```ENTER```.  
+ Open Insomnia Core and run ```CRUD``` operations - ``` GET POST PUT DELETE```
+ 
 ---
 
 ## User Story
@@ -50,6 +73,12 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ```
 ---
 ## Screenshots
+
+## Video in Action!
+[Walkthrough Full Size Video](https://drive.google.com/file/d/163hjHpMLv2AbtO6SV7zNVcFHvLphM--A/view)
+
+![Walkthrough Video Preview](./mongoDb-walkthrough.gif)
+
 ### Home Page View
 Coming Soon!
 

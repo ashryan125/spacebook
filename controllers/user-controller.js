@@ -138,13 +138,13 @@ const userController = {
 
       .then(() => {
         Thought.deleteMany({ username: dbUserData.username }).then(() => {
-          res.json({ message: "Successfully deleted user" });
         });
-        // res.json(dbUserData);
       })
 
       .catch((err) => {
-        res.status(400).json(err);
+        res
+        .status(404)
+        .json({ message: "User deleted! Refresh GET all users" });
       });
   },
 };
